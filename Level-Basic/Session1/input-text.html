@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html ng-app>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Example 3</title>
+</head>
+<body>
+    <!-- Two-way data binding -->
+    <input type="text" name="age" ng-model="age" ng-init="age=10" />
+
+    <p>I am {{age}} year's old</p>
+    <p>I am <span ng-bind="age"></span></p>
+
+<script src="angular.js"></script>
+</body>
+</html>
