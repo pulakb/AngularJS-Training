@@ -10,7 +10,7 @@
 <p>The following books you should read are:</p>
 
 <ul>
-    <li ng-repeat="book in ctrl.books">{{book}}</li>
+    <li ng-repeat="book in ctrl.books track by $index">{{book}}</li>
 </ul>
 <script src="../angular.js"></script>
 <script>
