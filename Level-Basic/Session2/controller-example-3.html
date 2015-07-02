@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html ng-app="session2-3">
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Controller Example 3</title>
+    <style>
+        .read {
+            background-color: green;
+        }
+
+        .pending {
+            background-color: red;
+        }
+    </style>
+</head>
+<body ng-controller="session3Ctrl as ctrl">
+
+<!-- ng-repeat over an array -->
+
+<p>The reading status of following books:</p>
+
+<div ng-repeat="book in ctrl.books" ng-class="ctrl.getReadStatus(book.read)">
+    <div>Book Name: {{book.name}}</div>
+    <div ng-show="book.writer">Writer Name: {{book.writer}}</div>
+</div>
+
+<script src="../angular.js"></script>
+<script>
+angular.module('session2-3', [])
+        .controller('session3Ctrl', [function () {
+            var _self = this;
+
+            _self.books = [
+                {name: "AngularJS Up & Running", read: true, writer: "Ram"},
+                {name: "ng-book", read: false},
+                {name: "Express Up", read: true},
+                {name: "Express Running", read: false, writer: "Madhu"},
+            ];
+
+            _self.getReadStatus = function (status) {
+              return {
+                  read: status,
+                  pending: !status
+              }
+            };
+        }]);
+
+</script>
+</body>
+</html>

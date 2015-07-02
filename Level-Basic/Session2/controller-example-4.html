@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html ng-app="session2-4">
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Controller Example 4</title>
+</head>
+<body ng-controller="session4Ctrl as ctrl">
+
+<!-- ng-repeat over an object -->
+
+<p>The reading status of following books:</p>
+
+<div ng-repeat="(author, book) in ctrl.books">
+    <div>Book Name: {{book.name}}</div>
+    <div>Writer Name: {{author}}</div>
+</div>
+
+<script src="../angular.js"></script>
+<script>
+angular.module('session2-4', [])
+        .controller('session4Ctrl', [function () {
+            var _self = this;
+
+            _self.books = {
+                ram: {name: "AngularJS Up & Running", read: true},
+                Shyam: {name: "ng-book", read: false},
+                jadu: {name: "Express Up", read: true},
+                Madhu: {name: "Express Running", read: false}
+            };
+        }]);
+
+</script>
+</body>
+</html>
