@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html ng-app="session2-2">
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Controller Example 2</title>
+</head>
+<body ng-controller="session2Ctrl as ctrl">
+<!-- Working with Arrays -->
+
+<p>The following books you should read are:</p>
+
+<ul>
+    <li ng-repeat="book in ctrl.books">{{book}}</li>
+</ul>
+<script src="angular.js"></script>
+<script>
+angular.module('session2-2', [])
+        .controller('session2Ctrl', [function () {
+            var _self = this;
+
+            _self.books = [
+                    "AngularJS Up & Running",
+                    "ng-book"
+            ];
+        }]);
+
+</script>
+</body>
+</html>

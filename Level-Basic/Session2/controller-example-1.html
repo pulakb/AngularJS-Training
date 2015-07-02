@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html ng-app="session2-1">
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Controller Example 1</title>
+</head>
+<body ng-controller="session2Ctrl as ctrl">
+<p>Welcome to the {{ctrl.jungle}}</p>
+
+<button ng-click="ctrl.changePlace()">Move to other place</button>
+
+<script src="angular.js"></script>
+<script>
+angular.module('session2-1', [])
+        .controller('session2Ctrl', [function () {
+            var _self = this;
+            _self.jungle = "Sundarbon";
+            _self.changePlace = function () {
+              _self.jungle = 'Jim Corbet Park';
+            };
+        }]);
+
+</script>
+</body>
+</html>
