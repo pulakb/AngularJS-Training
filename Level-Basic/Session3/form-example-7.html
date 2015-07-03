@@ -20,7 +20,7 @@
                 <label for="first">Show 2nd content</label>
                 <input type="radio" name="sex" ng-model="ctrl.student.sex" value="female" />
             </div>
-{{ctrl.student.sex}}}
+            {{ctrl.student.sex}}
             <p ng-show="ctrl.student.sex == 'male'">This is the first content!</p>
             <h2 ng-show="ctrl.student.sex == 'female'">This is the other content!</h2>
         </div>
@@ -28,5 +28,6 @@
     </form>
 
 <script src="../angular.js"></script>
+<script src="scripts/form-example-1.js"></script>
 </body>
 </html>
