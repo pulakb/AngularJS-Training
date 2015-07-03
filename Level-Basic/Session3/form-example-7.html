@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html ng-app="studentApp">
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Form Controls - Radio Button Example</title>
+</head>
+<body ng-controller="studentCtrl as ctrl">
+    <!-- Simple Form with Other Form Control Example -->
+
+    <strong>Student Registration with Radio Buttons:</strong>
+
+    <form ng-submit="ctrl.save()" name="studentForm">
+        <p>Name: <input type="text" ng-model="ctrl.student.name" required ng-minlength="4" /></p>
+        <p>Age: <input type="number" ng-model="ctrl.student.age" required /></p>
+        <p>Address: <textarea ng-model="ctrl.student.address" required></textarea> </p>
+        <div>
+            <div>
+                <label for="first">Show first content</label>
+                <input type="radio" name="sex" ng-model="ctrl.student.sex" value="male" />
+                <label for="first">Show 2nd content</label>
+                <input type="radio" name="sex" ng-model="ctrl.student.sex" value="female" />
+            </div>
+{{ctrl.student.sex}}}
+            <p ng-show="ctrl.student.sex == 'male'">This is the first content!</p>
+            <h2 ng-show="ctrl.student.sex == 'female'">This is the other content!</h2>
+        </div>
+        <input type="submit" value="Submit" ng-disabled="studentForm.$invalid" />
+    </form>
+
+<script src="../angular.js"></script>
+</body>
+</html>
