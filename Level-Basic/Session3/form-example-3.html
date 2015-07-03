@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html ng-app="studentApp">
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Displaying Error Message Example</title>
+</head>
+<body ng-controller="studentCtrl as ctrl">
+    <!-- Simple Form with validation & error message Example -->
+
+    <strong>Student Registration Form with validation:</strong>
+
+    <form ng-submit="ctrl.save()" name="studentForm">
+        <p>
+            Name: <input type="text" ng-model="ctrl.student.name" name="sname" required ng-minlength="4" />
+            <div ng-show="studentForm.sname.$error.required">
+                Student name is required
+            </div>
+            <div ng-show="studentForm.sname.$error.minlength">
+                Minimum length required is 4
+            </div>
+            <div ng-show="studentForm.sname.$invalid">
+                This field is invalid
+            </div>
+        </p>
+        <p>
+            Age: <input type="number" ng-model="ctrl.student.age" name="sage" required />
+            <div ng-show="studentForm.sage.$error.required">
+                Student Age is required
+            </div>
+            <div ng-show="studentForm.sage.$invalid">
+                This field is invalid
+            </div>
+        </p>
+        <input type="submit" value="Submit" ng-disabled="studentForm.$invalid" />
+    </form>
+
+<script src="../angular.js"></script>
+<script src="scripts/form-example-1.js"></script>
+</body>
+</html>
