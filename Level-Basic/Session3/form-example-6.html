@@ -21,15 +21,15 @@
                     With binding:
                     <input type="checkbox"
                            ng-model="sport.selected"
-                           ng-true-value="YES"
-                           ng-false-value="NO">
+                           ng-true-value="'YES'"
+                           ng-false-value="'NO'">
                 </div>
                 <div>
                     using ng-checked:
-                    <input type="checkbox" ng-checked="sport.selected === 'YES'">
+                    <input type="checkbox" ng-checked="ctrl.sport.selected === 'YES'">
                 </div>
                 <div>
-                    current state: {{sport.selected}}
+                    current state: {{ctrl.sport.selected}}
                 </div>
             </div>
 
