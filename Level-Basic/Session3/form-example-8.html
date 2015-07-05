@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html ng-app="studentApp">
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Form Select DropDown Example</title>
+</head>
+<body ng-controller="studentCtrl as ctrl">
+    <!-- Drop Down/Combo box Example -->
+  <div>
+    <select ng-model="ctrl.selectedProfileID"
+            ng-options="c.id as c.name for c in ctrl.profiles">
+    </select>
+    Selected Profile ID: {{ctrl.selectedProfileID}}
+  </div>
+
+    <div>
+        <select ng-model="ctrl.selectedProfile"
+                ng-options="c.name for c in ctrl.profiles">
+        </select>
+        Selected Profile: {{ctrl.selectedProfile}}
+    </div>
+<script src="../angular.js"></script>
+<script src="scripts/form-example-8.js"></script>
+</body>
+</html>
