@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html ng-app="OrderApp">
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Routing Example 3</title>
+</head>
+<body>
+    <h2>Order List</h2>
+    <table>
+        <thead>
+        <tr>
+            <th>#</th>
+            <th>Order No.</th>
+            <th>Details</th>
+            <th></th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>1</td>
+            <td>1234</td>
+            <td>15" Samsung Laptop</td>
+            <td><a href="#showOrder/1234">show details</a></td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>5412</td>
+            <td>2TB Seagate Hard drive</td>
+            <td><a href="#showOrder/5412">show details</a></td>
+        </tr>
+        <tr>
+            <td>3</td>
+            <td>9874</td>
+            <td>D-link router</td>
+            <td><a href="#showOrder/9874">show details</a></td>
+        </tr>
+        </tbody>
+    </table>
+
+    <div ng-view></div>
+
+<script src="../angular.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.11/angular-route.js"></script>
+<script src="./scripts/routing_example_2.js"></script>
+</body>
+</html>

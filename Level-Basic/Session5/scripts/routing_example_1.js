@@ -1,3 +1,7 @@
+/*
+* Example to show how to define routes and associated templates.
+* */
+
 angular.module('studentApp', ['ngRoute']).config(['$routeProvider', function ($routeProvider) {
     $routeProvider.when('/', {
         template: "<h5>Welcome to Student HP</h5>"
